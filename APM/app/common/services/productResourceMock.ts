@@ -1,4 +1,4 @@
-/*
+
 module app.common {
 
     var mockResource = angular
@@ -46,11 +46,11 @@ module app.common {
             var product = { "productId": 0 };
             var parameters = url.split('/');
             var length = parameters.length;
-            var id = parameters[length - 1];
+            var id = Number(parameters[length - 1]);
 
             if (id > 0) {
                 for (var i = 0; i < products.length; i++) {
-                    if (products[i].productId == id) {
+                    if (Number(products[i].productId) == id) {
                         product = products[i];
                         break;
                     }
@@ -68,4 +68,3 @@ module app.common {
         $httpBackend.whenGET(/app/).passThrough();
     }
 }
-*/
